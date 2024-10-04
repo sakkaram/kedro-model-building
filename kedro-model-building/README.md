@@ -1,10 +1,9 @@
 
 ## Overview
 
-This is a Kedro project, which was generated using `Kedro 0.18.8`. This Kedro Project was used to clean data and train models used for research and commercial purposes.
-Some IP elements (Custom Classifier) have been reducted, which however can be easily replaced with LightGBM and refactoring of the code.
+This is a Kedro project, which was generated using Kedro 0.18.8. This Kedro Project was used to clean data and train models used for research and commercial purposes. Some IP elements (Custom Classifier) have been redacted, which however can be easily replaced with LightGBM and refactoring of the code.
 
-Adittionally some modules, that help produce Cusum Plots and split of data by hospital (Reseach specific) have been provided in the file Additional_tools. 
+Additionally, some modules, that help produce Cusum Plots and split of data by hospital (Research specific) have been provided in the file Additional_tools.
 
 Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
 
