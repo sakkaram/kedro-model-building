@@ -1,0 +1,100 @@
+# Here you can define all your data sets by using simple YAML syntax.
+raw_data:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/traing_data.csv
+
+
+data_pre_step_1:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate/data_pre_step_1.pq
+
+data_pre_step_2:
+    type: pandas.ParquetDataSet
+    filepath: data/02_intermediate/data_pre_step_2.pq
+
+data_pre_step_3:
+    type: pandas.ParquetDataSet
+    filepath: data/02_intermediate/data_pre_step_3.pq
+
+n_patients:
+  type: json.JSONDataSet
+  filepath: data/03_primary/n_patients_per_year.json
+
+data_s_step_1:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate/data_s_step_1.pq
+
+data_s_step_2:
+    type: pandas.ParquetDataSet
+    filepath: data/02_intermediate/data_s_step_2.pq
+
+encoder_dictionary:
+  type: pickle.PickleDataSet
+  filepath: data/03_primary/encoder_dictionary.pkl
+
+categorical_columns:
+  type: json.JSONDataSet
+  filepath: data/03_primary/categorical_columns.json
+
+data_s_step_3:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate/data_s_step_3.pq
+
+outlier_remover:
+  type: pickle.PickleDataSet
+  filepath: data/03_primary/outlier_remover.pkl
+
+data_s_step_4:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate/data_s_step_4.pq
+
+imputation_kernel:
+  type: pickle.PickleDataSet
+  filepath: data/03_primary/imputation_kernel.pkl
+
+imputation_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/imputation_plot.png
+  versioned: true
+
+selected_features:
+  type: json.JSONDataSet
+  filepath: data/03_primary/selected_features.json
+
+training_params:
+  type: json.JSONDataSet
+  filepath: data/03_primary/training_params.json
+
+model:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/model.pkl
+  versioned: true
+
+calibrator:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/calibrator.pkl
+  versioned: true
+
+metrics:
+  type: tracking.MetricsDataSet
+  filepath: data/08_reporting/metrics.json
+
+probability_dist:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/probability_dist.png
+  versioned: true
+
+roc_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/roc_plot.png
+  versioned: true
+
+precision_recall_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/precision_recall_plot.png
+  versioned: true
+
+importance_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/importance_plot.png
+  versioned: true

@@ -1,0 +1,56 @@
+data_options:
+  set_index_boolean: True
+  index_column: patient_id
+  drop_boolean: True
+  columns_to_drop:
+      - encounter_id
+      - hospital_id
+      - apache_4a_icu_death_prob
+      - apache_post_operative
+      - apache_4a_hospital_death_prob
+
+date_options:
+  date_dayfirst: True
+  age_exists: True
+  birth_date_col:
+  op_date_col:
+
+data_science_options:
+  target_variable: hospital_death
+  positive_class: 1
+  negative_class: 0
+  row_threshold: 0.3
+  column_threshold: 0.3
+  cardinality_threshold: 0.01
+  categorical_columns:
+    - ethnicity
+    - gender
+    - icu_admit_source
+    - icu_id
+    - icu_type
+    - icu_stay_type
+    - arf_apache
+    - intubated_apache
+    - aids
+    - cirrhosis
+    - diabetes_mellitus
+    - hepatic_failure
+    - immunosuppression
+    - leukemia
+    - lymphoma
+    - solid_tumor_with_metastasis
+    - apache_3j_bodysystem
+    - apache_2_bodysystem
+  numerical_columns:
+  find_categorical_columns_boolean:
+  outlier_threshold: 8
+  drop_outliers_boolean: False
+  random_state: 42
+  test_size: 0.2
+  calibration_size: 0.1
+  min_features: 10
+  main_metric: ROC_AUC
+  method: rf
+  rfecv_boolean: False
+  use_smote_boolean: True
+  # psi_transform: True
